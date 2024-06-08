@@ -1,0 +1,70 @@
+/* src/components/PurchaseForm/PurchaseForm.css */
+.purchase-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.purchase-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.purchase-form h2 {
+  margin-bottom: 20px;
+}
+
+.purchase-form form > div {
+  margin-bottom: 10px;
+}
+
+.purchase-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.purchase-form input {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.purchase-form button[type="submit"] {
+  background-color: #00bfae;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.purchase-form button[type="submit"]:hover {
+  background-color: #008f7a;
+}
+
+.purchase-form .close-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.purchase-form .close-button:hover {
+  background-color: #d32f2f;
+}

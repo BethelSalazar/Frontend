@@ -1,0 +1,62 @@
+/* src/pages/Home.css */
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200px;
+  background-color: #FFF0DC;
+}
+
+.content {
+  max-width: 100%;
+}
+
+.title {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #00bfae;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #00bfae;
+  color: white;
+  margin-right: 10px;
+}
+
+.secondary {
+  background-color: white;
+  color: #00bfae;
+  border: 2px solid #00bfae;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
