@@ -37,7 +37,7 @@ Asegúrate de tener instalado lo siguiente en tu máquina:
 Sigue estos pasos para clonar y configurar el proyecto en tu máquina local.
 
 1.- Clona el repositorio:
-git clone https://github.com/BethelSalazar/Frontend) cd Frontend
+git clone https://github.com/BethelSalazar/Frontend.git cd Frontend
 2.- Instala las dependencias del proyecto: npm install
 3.- Ejecución del Proyecto Para iniciar el servidor de desarrollo, utiliza el siguiente comando: npm run dev El proyecto estará disponible en http://localhost:5173.
 
