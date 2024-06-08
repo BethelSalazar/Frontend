@@ -66,7 +66,11 @@ src/
 │   └── Clase.test.jsx
 ├── App.jsx
 └── main.jsx
+
+
 ![alt text](image-7.png)
+
+
 # Uso del Proyecto
 Este proyecto proporciona una plataforma de tutoría en línea con las siguientes características:
 
