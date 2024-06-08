@@ -8,51 +8,9 @@ const PurchaseForm = ({ classData, onClose }) => {
   const [expirationDate, setExpirationDate] = useState('');
   const [cvv, setCvv] = useState('');
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validateCardNumber = (cardNumber) => {
-    const cardNumberRegex = /^\d{16}$/;
-    return cardNumberRegex.test(cardNumber);
-  };
-
-  const validateExpirationDate = (expirationDate) => {
-    const expirationDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
-    return expirationDateRegex.test(expirationDate);
-  };
-
-  const validateCVV = (cvv) => {
-    const cvvRegex = /^\d{3,4}$/;
-    return cvvRegex.test(cvv);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newErrors = {};
-
-    if (!validateEmail(email)) {
-      newErrors.email = 'Email no válido';
-    }
-    if (!validateCardNumber(cardNumber)) {
-      newErrors.cardNumber = 'Número de tarjeta no válido';
-    }
-    if (!validateExpirationDate(expirationDate)) {
-      newErrors.expirationDate = 'Fecha de expiración no válida (MM/AA)';
-    }
-    if (!validateCVV(cvv)) {
-      newErrors.cvv = 'CVV no válido';
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    setErrors({});
     setLoading(true);
 
     const purchaseData = {
@@ -64,7 +22,7 @@ const PurchaseForm = ({ classData, onClose }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:3001/api/purchase', {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -101,51 +59,23 @@ const PurchaseForm = ({ classData, onClose }) => {
           </div>
           <div>
             <label>Email:</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            {errors.email && <span className="error">{errors.email}</span>}
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div>
             <label>Número de tarjeta:</label>
-            <input
-              type="text"
-              value={cardNumber}
-              onChange={(e) => setCardNumber(e.target.value)}
-              required
-            />
-            {errors.cardNumber && <span className="error">{errors.cardNumber}</span>}
+            <input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} required />
           </div>
           <div>
             <label>Fecha de expiración:</label>
-            <input
-              type="text"
-              value={expirationDate}
-              onChange={(e) => setExpirationDate(e.target.value)}
-              required
-            />
-            {errors.expirationDate && <span className="error">{errors.expirationDate}</span>}
+            <input type="text" value={expirationDate} onChange={(e) => setExpirationDate(e.target.value)} required />
           </div>
           <div>
             <label>CVV:</label>
-            <input
-              type="text"
-              value={cvv}
-              onChange={(e) => setCvv(e.target.value)}
-              required
-            />
-            {errors.cvv && <span className="error">{errors.cvv}</span>}
+            <input type="text" value={cvv} onChange={(e) => setCvv(e.target.value)} required />
           </div>
-          <button type="submit" disabled={loading}>
-            Confirmar Compra
-          </button>
+          <button type="submit" disabled={loading}>Confirmar Compra</button>
         </form>
-        <button onClick={onClose} className="close-button">
-          Cerrar
-        </button>
+        <button onClick={onClose} className="close-button">Cerrar</button>
       </div>
     </div>
   );
